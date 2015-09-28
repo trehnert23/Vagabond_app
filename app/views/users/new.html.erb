@@ -1,0 +1,18 @@
+<h1> New User Signup Page </h1>
+
+<%= form_for @user do |form| %>
+  
+ 	<%= form.text_field :first_name, placeholder: "First Name", class: "form-control" %><br>
+
+    <%= form.text_field :last_name, placeholder: "Last Name" %> <br>
+
+    <%= form.text_field :city, placeholder: "City of Residence" %> <br>
+  
+    <%= form.email_field :email, placeholder: "Email Address" %> <br>
+  
+    <%= form.password_field :password, placeholder: "Password" %> <br>
+
+  <%= form.submit "Sign Up!" %>
+<% end %>
+
+user details: 123 , 123@gmail.com
