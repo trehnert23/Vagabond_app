@@ -1,0 +1,9 @@
+<h1> User profile page here </h1>
+
+Why Hello there, <%= @user.first_name %>!<br>
+
+You are from: <%= @user.city %><br>
+
+<%= @user.created_at %><br>
+
+<%= link_to "logout", sessions_path, method: :delete %>
