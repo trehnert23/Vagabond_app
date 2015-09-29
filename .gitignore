@@ -1,0 +1,10 @@
+.bundle/*
+!.bundle/config
+config/application.yml
+/log/*.log
+/tmp
+/public/assets
+*.log
+*.sql
+*.sqlite
+.DS_Store
