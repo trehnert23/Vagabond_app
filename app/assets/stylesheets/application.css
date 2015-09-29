@@ -10,6 +10,33 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap
  *= require_tree .
  *= require_self
  */
+
+.navbar-custom .navbar-header .navbar-brand {
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.navbar-custom .navbar-nav > li > a {
+  color: white;
+  font-size: 20px;
+}
+
+.navbar-custom .navbar-nav > li > a:hover {
+  color: black;
+}
+
+.navbar-custom .navbar-brand {
+  color: white;
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: rgba(0,0,0,.5);
+}
+
+.navbar-custom .navbar-right {
+  margin-right: 20px;
+}
