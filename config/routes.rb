@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
     get "/login", to: "sessions#new", as: "login"
 
+    get "/users/:id/edit", to: "users#edit", as: "edit_user"
+
+    patch "/users/:id", to: "users#update"
+
     post "/sessions", to: "sessions#create"
 
     delete '/sessions', to: 'sessions#destroy'
