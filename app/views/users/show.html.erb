@@ -1,0 +1,23 @@
+<h1> User profile page here </h1>
+
+<%= link_to "Create New", new_article_path %><br>
+
+Why Hello there, <%= @user.first_name %>!<br>
+
+You are from: <%= @user.city %><br>
+
+<%= @user.created_at %><br>
+
+
+<br>
+
+<% @user.articles.each do |article| %>
+    <li><%= link_to article.title, article %></li>
+    <li><%= article.city %></li>
+    <li><%= article.content %></li>
+  <% end %>
+
+<%= link_to "Update Info", edit_user_path(@user) %> <br>
+
+
+
