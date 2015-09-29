@@ -48,4 +48,8 @@ root to: "users#index"
     delete '/sessions', to: 'sessions#destroy'
 
 
+    #cities
+
+    get "/cities/:id", to: "cities#show", as: "city"
+
 end
