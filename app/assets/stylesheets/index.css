@@ -1,0 +1,20 @@
+body {
+	background: url('http://static1.businessinsider.com/image/558472a9ecad042914bebe56/this-mega-yacht-could-have-2-pools-2-movie-theaters-2-helipads-and-cost-over-1-billion.jpg') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+h1 {
+	margin-top: 10%;
+	margin-left: 8%;
+	font-size: 70px;
+	font-family: Lobster;
+	background-color: black;
+	text-shadow: 0px 3px 3px green;
+	color: transparent;
+	-webkit-background-clip: text;
+
+}
+
