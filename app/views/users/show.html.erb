@@ -8,6 +8,7 @@ You are from: <%= @user.city %><br>
 
 <%= @user.created_at %><br>
 
+
 <br>
 
 <% @user.articles.each do |article| %>
@@ -15,3 +16,8 @@ You are from: <%= @user.city %><br>
     <li><%= article.city %></li>
     <li><%= article.content %></li>
   <% end %>
+
+<%= link_to "Update Info", edit_user_path(@user) %> <br>
+
+
+
