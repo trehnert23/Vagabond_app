@@ -1,0 +1,15 @@
+<h1> New Article page </h1>
+
+
+
+<%= form_for @article do |form| %>
+  
+ 	<%= form.text_field :title, placeholder: "Title", class: "form-control" %><br>
+
+    <%= form.text_field :city, placeholder: "City" %> <br>
+
+    <%= form.text_field :content, placeholder: "Say What!!" %> <br>
+
+
+  <%= form.submit "Create!" %>
+<% end %> 

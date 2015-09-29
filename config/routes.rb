@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'articles/new'
+
+  get 'articles/create'
+
+  get 'articles/show'
+
+  get 'articles/destroy'
+
    root to: "users#index"
 
     get "/users", to: "users#index", as: "users"
@@ -15,5 +23,13 @@ Rails.application.routes.draw do
     post "/sessions", to: "sessions#create"
 
     delete '/sessions', to: 'sessions#destroy'
+
+    #articles
+
+    get "/articles/new", to: "articles#new", as: "new_article"
+
+    post "/articles", to: "articles#create"
+    
+    get "/articles/:id", to: "articles#show", as: "article"
 
 end
