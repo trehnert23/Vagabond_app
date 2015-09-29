@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'articles/new'
-
-  get 'articles/create'
-
-  get 'articles/show'
-
-  get 'articles/destroy'
-
    root to: "users#index"
 
     get "/users", to: "users#index", as: "users"
@@ -35,5 +27,9 @@ Rails.application.routes.draw do
     post "/articles", to: "articles#create"
     
     get "/articles/:id", to: "articles#show", as: "article"
+
+    #cities
+
+    get "/cities/:id", to: "cities#show", as: "city"
 
 end
