@@ -13,7 +13,9 @@
  *= require bootstrap
  *= require bootstrap_and_overrides
  *= require nav
- *= require city
  *= require index
+ *= require_tree .
  *= require_self
  */
+
+ 
