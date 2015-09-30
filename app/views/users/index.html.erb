@@ -1,16 +1,33 @@
+<!DOCTYPE html>
 
 <html>
 <head>
-	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-	<h1>This is our Home page</h1>
-	<br>
-	<%= link_to "San Francisco", city_path(1) %><br>
-	<%= link_to "London", city_path(2) %><br>
-	<%= link_to "Gibraltar", city_path(3) %><br>
+	<h1 class="homepage_header">This is our Home page</h1><br>
+
+
+	<div class="moon_line"></div>
+	<a href="http://localhost:3000/cities/1">
+	  <div class="moon_tag">Moon</div>
+	</a>
+
+	<div class="mars_line"></div>
+	<a href="http://localhost:3000/cities/2">
+	  <div class="mars_tag">Mars</div>
+	</a>
+
+	<div class="brad_line"></div>
+	<a href="http://localhost:3000/cities/3">
+	  <div class="brad_tag">Brad's Space Hotel of Love</div>
+	</a>
+
 </body>
-</html> 
+</html>
+
+
 
 
 
