@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
+  def require_login
+    if !current_user
+      redirect_to root_path #halt's request cycle
+    end
+  end
+
 end

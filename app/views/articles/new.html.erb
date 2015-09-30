@@ -4,11 +4,11 @@
 
 <%= form_for @article do |form| %>
   
- 	<%= form.text_field :title, placeholder: "Title", class: "form-control" %><br>
+ 	<%= form.text_field :title, placeholder: "Title", :maxlength => 200, class: "form-control" %><br>
 
 	<%= select(:article, :city_id, [['San Francisco', 1], ['London', 2], ['Gibraltar', 3]]) %><br>
 
-    <%= form.text_field :content, placeholder: "Say What!!" %> <br>
+    <%= form.text_field :content, :required => true, placeholder: "Tell us about your date" %> <br>
 
     <%= form.text_field :street, placeholder: "Street Name" %> <br>
 
