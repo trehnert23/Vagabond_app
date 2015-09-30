@@ -1,18 +1,19 @@
+<nav class="navbar navbar-default navbar-inverse">
+    <div>
+      <ul class="nav navbar-nav navbar-left">
+      	<%= link_to "Home", root_path %>
+      	<% if current_user %>
 
-<%= link_to "Home", root_path %>
+      	    <%= link_to "Logout", sessions_path, method: :delete %> 
+      	    <%= link_to "Profile", user_path(current_user) %> 
+      	<% else %>
+      	    <%= link_to "Signup", new_user_path, { :class=>"signup_link" } %>
 
-<% if current_user %>
+      	    <span>               </span>
 
-	
-	<%= link_to "Profile", user_path(current_user) %> 
-	<%= link_to "Logout", sessions_path, method: :delete %> 
+      	    <%= link_to "Login", login_path, { :class=>"login_link" } %>
 
-<% else %>
-
-    <%= link_to "Signup", new_user_path %>
-
-    <span>or</span>
-
-    <%= link_to "Login", login_path %>
-
-<% end %>
+      	<% end %>
+      </ul>
+    </div>
+</nav>

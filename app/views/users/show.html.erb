@@ -1,29 +1,46 @@
-<h1> User profile page here </h1>
+<!DOCTYPE html>
 
-Why Hello there, <%= @user.first_name %>!<br>
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<h1 class="user_header"> User Profile</h1>
+	<div class="hello_there">
+		Why Hello there, <%= @user.first_name %>!<br>
 
-You are from: <%= @user.city %><br>
+		You are from: <%= @user.city %><br>
 
-<%= @user.created_at %><br>
+		<%= @user.created_at %><br>
+	</div>
 
-<%= link_to "Update User Info", edit_user_path(@user) %> 
+	<div class="user_update_button">
+		<%= link_to "Update User Info", edit_user_path(@user), { :class=>"user_update_link" } %> 
+	</div>
 
-<br>
 
-<br>
+	<h1 class="articles_header">Articles</h1>
 
-<%= link_to "Create New Article", new_article_path %><br>
-<br>
+	<div class="article_create_button">
+		<%= link_to "Create New Article", new_article_path, { :class=>"article_update_link" }  %>
+	</div>
 
-<% @user.articles.each do |article| %>
-    <li><%= link_to article.title, article %></li>
-    <li><%= article.city %></li>
-    <li><%= article.content %></li>
-    <%= link_to "Edit this Article", edit_article_path(article.id) %><br>
-	<%= link_to "Delete this Article v2", delete_article_path(article.id), method: :delete %><br>
-    <br>
-  <% end %>
-<br>
+	<% @user.articles.each do |article| %>
+		<div class="articles">
+		<%= link_to article.title, article %>
+	    <li><%= article.title %></li>
+	    <li><%= article.city %></li>
+	    <li><%= article.content %></li>
+	    <%= link_to "Edit this Article", edit_article_path(article.id) %><br>
+		<%= link_to "Delete this Article", delete_article_path(article.id), method: :delete %><br>
+	    </div>
+	<% end %>
+</body>
+</html>
+
+
+
+
 
 
 
