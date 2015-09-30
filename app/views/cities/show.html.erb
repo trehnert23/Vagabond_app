@@ -1,12 +1,11 @@
-<H1>Cities Page</H1>
+<h1><%= @cities.name %></h1>
 
-<img class="map2" src="">
+<%= link_to "Write a new article about #{@cities.name}", new_article_path, { :class=>"article_update_link" }  %>
 
 <% @cities.articles.each do |article| %>
-	<div class="articles2">
+	<div class="articles">
     <li><%= link_to article.title, article %></li>
-    <li><%= article.city %></li>
-    <li><%= article.content %></li>
+    <li><%= h truncate(article.content, :length => 1000) %>....<%= link_to "Read More", article_path(article.id) %></li>
     <% if current_user %>
 	    <% if current_user.id == article.user_id %>
 		    <%= link_to "Edit this Article", edit_article_path(article) %><br>

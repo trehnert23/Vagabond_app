@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-   before_action :require_login, only: [:edit, :new]
+   before_action :require_login, only: [:edit]
 
   def index
   	@articles = Article.all
@@ -8,7 +8,11 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    render :new
+    if current_user
+      render :new
+    else
+      redirect_to new_user_path
+    end
   end
 
   def create
