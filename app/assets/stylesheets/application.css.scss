@@ -10,58 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require bootstrap
+ *= require bootstrap_and_overrides
+ *= require nav
+ *= require city
+ *= require index
  *= require_self
  */
-
-
-@import "bootstrap";
-
-.logout_link {
-	color: white;
-	font-size: 25px;
-	text-decoration: none;
-	font-family: Lobster;
-}
-
-.logout_link:hover {
-	color: red;
-	text-decoration: none;
-	font-family: Lobster;
-}
-
-.signup_link {
-	color: white;
-	font-size: 25px;
-	text-decoration: none;
-	font-family: Lobster;
-}
-
-.signup_link:hover {
-	color: red;
-	text-decoration: none;
-	font-family: Lobster;
-}
-
-.login_link {
-	color: white;
-	font-size: 25px;
-	text-decoration: none;
-	font-family: Lobster;
-}
-
-.login_link:hover {
-	color: red;
-	text-decoration: none;
-	font-family: Lobster;
-}
-
-.hash {
-	color: transparent;
-}
-
-
-
-
-
