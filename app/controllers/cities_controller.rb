@@ -8,6 +8,7 @@ class CitiesController < ApplicationController
 	  @cities = City.new
 	  render :new
 	end
+	
 	def create
     city_params = params.require(:city).permit(:name, :street, :country)
     @city = City.create(city_params)

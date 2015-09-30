@@ -4,7 +4,7 @@
 
 <%= form_for @article do |form| %>
   
- 	<%= form.text_field :title, placeholder: "Title", :maxlength => 200, class: "form-control" %><br>
+ 	<%= form.text_field :title, :required => true, placeholder: "Title", :maxlength => 200, class: "form-control" %><br>
 
 	<%= select(:article, :city_id, [['San Francisco', 1], ['London', 2], ['Gibraltar', 3]]) %><br>
 

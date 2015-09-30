@@ -15,15 +15,12 @@ class ArticlesController < ApplicationController
     article_params = params.require(:article).permit(:title, :content, :city_id, :street, :state, :country)
     @article = current_user.articles.create(article_params)
     redirect_to "/articles/#{@article.id}", flash: { success: "Boom! New date added!" }
-    
   end
-
 
   def show
     @article = Article.find_by({id: params[:id]})
     @author = User.find(@article.user_id).first_name
     @city = City.find(@article.city_id).name
-
     render :show
   end
 
@@ -47,10 +44,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    # article_params = params.require(:article).permit(:title, :content, :city, :street, :state, :country)
-    # @article = Article.find_by(params[:id])
-    # @article.destroy
-
     Article.delete(params[:id])
     redirect_to user_path(current_user), flash: { success: "Date has been deleted!" }
   end
