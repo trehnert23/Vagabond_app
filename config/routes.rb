@@ -4,14 +4,6 @@ root to: "users#index"
 
   ### ARTICLES ###
 
-  # get 'articles/new'
-
-  # get 'articles/create'
-
-  # get 'articles/show'
-
-  # get 'articles/destroy'
-
     get "/articles/new", to: "articles#new", as: "new_article"
 
     post "/articles", to: "articles#create"
