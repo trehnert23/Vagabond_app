@@ -6,16 +6,9 @@
   
  	<%= form.text_field :title, :required => true, placeholder: "Title", :maxlength => 200, class: "form-control" %><br>
 
-	<%= select(:article, :city_id, [['San Francisco', 1], ['London', 2], ['Gibraltar', 3]]) %><br>
+	<%= select(:article, :city_id, [['Moon', 1], ['Mars', 2], ["Brad's Space Hotel of Love", 3]]) %><br>
 
-    <%= form.text_field :content, :required => true, placeholder: "Tell us about your date" %> <br>
-
-    <%= form.text_field :street, placeholder: "Street Name" %> <br>
-
-    <%= form.text_field :state, placeholder: "State" %> <br>
-
-    <%= form.text_field :country, placeholder: "Country" %> <br>
-
+    <%= form.text_area :content, :required => true, placeholder: "Any cool destinations on this planet?", size: "150x10" %> <br>
 
   <%= form.submit "Create!" %>
 <% end %> 
