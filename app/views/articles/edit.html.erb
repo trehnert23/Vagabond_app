@@ -1,6 +1,4 @@
-<h1> New Article page </h1>
-
-
+<br></h1> Edit Artcile Page </h1>
 
 <%= form_for @article do |form| %>
   
@@ -10,5 +8,6 @@
 
     <%= form.text_area :content, :required => true, placeholder: "Any cool destinations on this planet?", size: "150x10" %> <br>
 
-  <%= form.submit "Create!" %>
+  <%= form.submit "Update!" %>
+
 <% end %> 

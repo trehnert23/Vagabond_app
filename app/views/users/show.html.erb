@@ -1,23 +1,48 @@
-<h1> User profile page here </h1>
+<div class="container">
+	<h1 class="user_header"> <%= @user.first_name.capitalize %> Profile</h1>
+	
+	<img class="random_picture" src="https://img.washingtonpost.com/wp-apps/imrs.php?src=https://img.washingtonpost.com/news/the-intersect/wp-content/uploads/sites/32/2015/01/facebook-person.jpg&w=1484">  <!-- css for image is in the user.scss -->
 
-<%= link_to "Create New", new_article_path %><br>
+	<div class="hello_there">
+		Why Hello there, <%= @user.first_name %>!<br>
 
-Why Hello there, <%= @user.first_name %>!<br>
+		You are from: <%= @user.city %><br>
 
-You are from: <%= @user.city %><br>
+		Member since: <%= @user.created_at %><br>
+	</div>
 
-<%= @user.created_at %><br>
+
+	<% if current_user %>
+	 	<% if current_user.id == @user.id %>
+			<div class="user_update_button">
+				<%= link_to "Update User Info", edit_user_path(@user), { :class=>"user_update_link" } %> 
+			</div>
+			<h1 class="articles_header">Articles</h1>
+			<div class="article_create_button">
+				<%= link_to "Create New Article", new_article_path, { :class=>"article_update_link" }  %>
+			</div>
+		<% end %>
+	<% end %>
+
+	<% @user.articles.each do |article| %>
+		<div class="articles">
+		<%= link_to article.title, article %>	    
+	    <li><%= link_to City.find(article.city).name, city_path(City.find(article.city).id) %></li>
+	    <li><%= h truncate(article.content, :length => 1000) %>....<%= link_to "Read More", article_path(article.id) %></li>
+		    <% if current_user.id == article.user_id %>
+			    <%= link_to "Edit this Article", edit_article_path(article.id), { :class=>"glyphicon glyphicon-pencil" } %><br>
+			    
+				<%= link_to "Delete this Article", delete_article_path(article.id), class: "glyphicon glyphicon-trash", method: :delete, :data => {:confirm => "Are you sure you want to delete this date?"} %><br>
+		    <% end %>
+	    </div>
+	<% end %>
+</div>
 
 
-<br>
 
-<% @user.articles.each do |article| %>
-    <li><%= link_to article.title, article %></li>
-    <li><%= article.city %></li>
-    <li><%= article.content %></li>
-  <% end %>
 
-<%= link_to "Update Info", edit_user_path(@user) %> <br>
+
+
 
 
 

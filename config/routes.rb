@@ -1,14 +1,25 @@
 Rails.application.routes.draw do
 
-  get 'articles/new'
+root to: "users#index"
 
-  get 'articles/create'
+  ### ARTICLES ###
 
-  get 'articles/show'
+    get "/articles/new", to: "articles#new", as: "new_article"
 
-  get 'articles/destroy'
+    post "/articles", to: "articles#create"
+    
+    get "/articles/:id", to: "articles#show", as: "article"
 
-   root to: "users#index"
+    get "/login", to: "sessions#new", as: "login"
+
+    get "/articles/:id/edit", to: "articles#edit", as: "edit_article"
+
+    patch "/articles/:id", to: "articles#update"
+
+    delete "/articles/:id", to: "articles#destroy", as: "delete_article"
+
+
+  ### USERS ###
 
     get "/users", to: "users#index", as: "users"
 
@@ -18,22 +29,19 @@ Rails.application.routes.draw do
 
     get "/users/:id", to: "users#show", as: "user"
 
-    get "/login", to: "sessions#new", as: "login"
-
     get "/users/:id/edit", to: "users#edit", as: "edit_user"
 
     patch "/users/:id", to: "users#update"
+
+  ### SESSIONS ###
 
     post "/sessions", to: "sessions#create"
 
     delete '/sessions', to: 'sessions#destroy'
 
-    #articles
 
-    get "/articles/new", to: "articles#new", as: "new_article"
+    #cities
 
-    post "/articles", to: "articles#create"
-    
-    get "/articles/:id", to: "articles#show", as: "article"
+    get "/cities/:id", to: "cities#show", as: "city"
 
 end
