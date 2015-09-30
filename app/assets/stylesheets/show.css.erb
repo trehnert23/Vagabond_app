@@ -1,16 +1,26 @@
 body {
-	background: url(<%= asset_path 'solar_system.jpg' %>) no-repeat center center fixed; 
+	background: url(<%= asset_path 'starry_night.jpg' %>) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
 
+/*USER FORMATTING*/
+
+.random_picture {
+	height: 300px;
+	border-radius: 30px;
+	position: absolute;
+	margin-left: 8%;
+}
 
 .user_header {
-	margin-left: 16%;
+	width: 100%;
+	text-align: center;
 	color: white;
 	font-family: Lobster;
+	font-size: 45px;
 }
 
 .hello_there {
@@ -18,36 +28,18 @@ body {
 	font-size: 20px;
 	background-color: rgba(255,255,255,0.4);
 	border-radius: 10px;
-	margin-top: 1%;
+	margin-top: 5%;
 	margin-bottom: 1%;
-	margin-left: 12%;
+	margin-left: 60%;
 	color: white;
-	width: 20%;
-}
-
-.articles_header {
-	margin-top: 4%;
-	margin-left: 45%;
-	color: white;
-	font-family: Lobster;
-
-}
-
-.articles {
-	padding: 1%;
-	background-color: rgba(255,255,255,0.4);
-	border-radius: 10px;
-	margin-top: 1%;
-	margin-bottom: 1%;
-	margin-left: 10%;
-	color: white;
-	width: 80%;
+	width: 30%;
+	height: 25%;
 }
 
 .user_update_button {
 	margin-top: 1%;
-	margin-bottom: 1%;
-	margin-left: 14.5%;
+	margin-bottom: 10%;
+	margin-left: 67%;
 	padding: 1%;
 	background-color: rgba(255,255,255,0.4);
 	border-radius: 10px;
@@ -69,6 +61,59 @@ body {
 	color: red;
 	text-decoration: none;
 	font-family: Lobster;
+}
+
+
+/*ARTICLE FORMATTING*/
+
+.article_title_link {
+	text-decoration: none;
+	color: blue;
+	font-size: 20px;
+}
+
+.article_title_link:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.article_location_link {
+	text-decoration: none;
+	color: white;
+}
+
+.article_location_link:hover {
+	text-decoration: none;
+	color: red;
+}
+
+.articles_header {
+	margin-top: 4%;
+	margin-left: 45%;
+	color: white;
+	font-family: Lobster;
+
+}
+
+.read_more_link {
+	text-decoration: none;
+	color: blue;
+}
+
+.read_more_link:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.articles {
+	padding: 1%;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 10px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 10%;
+	color: white;
+	width: 80%;
 }
 
 .article_create_button {

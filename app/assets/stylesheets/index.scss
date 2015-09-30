@@ -1,4 +1,80 @@
 
+/*MOON IMAGES*/
+
+.moon_link {
+	width: 60px;
+	margin-left: 9%;
+	margin-top: 8%;
+	position: absolute;
+}
+
+.moon_link:hover + div.moon_tag {
+	display: block;
+}
+
+.moon_tag {
+	width: 100%;
+	text-align: center;
+	font-size: 40px;
+	font-family: Lobster;
+	color: white;
+	display: none;
+	margin-left: 2%;
+	margin-top: 0%;
+	position: absolute;
+}
+
+/*MARS IMAGES*/
+
+.mars_link {
+	width: 60px;
+	margin-left: 30%;
+	margin-top: 20%;
+	position: absolute;
+}
+
+.mars_link:hover + div.mars_tag {
+	display: block;
+}
+
+.mars_tag {
+	width: 100%;
+	text-align: center;
+	font-size: 40px;
+	font-family: Lobster;
+	color: white;
+	display: none;
+	margin-left: 2%;
+	margin-top: 0%;
+	position: absolute;
+}
+
+
+/*BRAD IMAGES*/
+
+.brad_link {
+	width: 60px;
+	margin-left: 70%;
+	margin-top: 10%;
+	position: absolute;
+}
+
+.brad_link:hover + div.brad_tag {
+	display: block;
+}
+
+.brad_tag {
+	width: 100%;
+	text-align: center;
+	font-size: 40px;
+	font-family: Lobster;
+	color: white;
+	display: none;
+	margin-left: 2%;
+	margin-top: 0%;
+	position: absolute;
+}
+
 
 
 
