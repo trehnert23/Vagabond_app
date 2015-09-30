@@ -16,3 +16,45 @@
 
 
 @import "bootstrap";
+
+.logout_link {
+	color: white;
+	font-size: 25px;
+	margin-left: 5%;
+	text-decoration: none;
+	font-family: Lobster;
+}
+
+.logout_link:hover {
+	color: red;
+	text-decoration: none;
+	font-family: Lobster;
+}
+
+.signup_link {
+	color: white;
+	font-size: 25px;
+	margin-left: 5%;
+	text-decoration: none;
+	font-family: Lobster;
+}
+
+.signup_link:hover {
+	color: red;
+	text-decoration: none;
+	font-family: Lobster;
+}
+
+.login_link {
+	color: white;
+	font-size: 25px;
+	margin-left: 5%;
+	text-decoration: none;
+	font-family: Lobster;
+}
+
+.login_link:hover {
+	color: red;
+	text-decoration: none;
+	font-family: Lobster;
+}

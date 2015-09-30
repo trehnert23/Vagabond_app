@@ -1,0 +1,101 @@
+body {
+	background: url('https://images.unsplash.com/9/bob-van-aubel-ray-bans.jpg?q=80&fm=jpg&s=3c8e975b7a2e7b92bff336e5ca954491') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.user_header {
+	margin-left: 16%;
+	color: black;
+	font-family: Lobster;
+}
+
+.hello_there {
+	padding: 1%;
+	font-size: 20px;
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 10px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 12%;
+	color: white;
+	width: 20%;
+}
+
+.articles_header {
+	margin-top: 4%;
+	margin-left: 18%;
+	color: black;
+	font-family: Lobster;
+
+}
+
+.articles {
+	padding: 1%;
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 10px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 14.5%;
+	color: white;
+	width: 15%;
+}
+
+.user_update_button {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 14.5%;
+	padding: 1%;
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 10px;
+	text-decoration: none;
+	color: white;
+	width: 15%;
+	font-size: 20px;
+	text-align: center;
+	font-family: Lobster;
+}
+
+.user_update_link {
+	color: black;
+	text-decoration: none;
+	font-family: Lobster;
+}
+
+.user_update_link:hover {
+	color: red;
+	text-decoration: none;
+	font-family: Lobster;
+}
+
+.article_create_button {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 14.5%;
+	padding: 1%;
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 10px;
+	text-decoration: none;
+	color: white;
+	width: 15%;
+	font-size: 20px;
+	text-align: center;
+	font-family: Lobster;
+}
+
+.article_update_link {
+	color: black;
+	text-decoration: none;
+	font-family: Lobster;
+}
+
+.article_update_link:hover {
+	color: red;
+	text-decoration: none;
+	font-family: Lobster;
+}
+
+
+
