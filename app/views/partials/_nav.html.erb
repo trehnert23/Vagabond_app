@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-inverse">
     <div>
       <ul class="nav navbar-nav navbar-left">
-      	<%= link_to "Home", root_path %>
+      	<%= link_to "Home", root_path, { :class=>"signup_link" } %>
       	<% if current_user %>
 
       	    <%= link_to "Logout", sessions_path, {method: :delete}, { :class=>"signup_link" } %> 
