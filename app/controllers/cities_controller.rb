@@ -16,6 +16,7 @@ class CitiesController < ApplicationController
 
 	def show
 	  @cities = City.friendly.find(params[:id])
+	  
 	  # @author = User.find(@cities.user_id).first_name
 	  render :show
 	end
