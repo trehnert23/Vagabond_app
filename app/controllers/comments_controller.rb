@@ -26,12 +26,5 @@ class CommentsController < ApplicationController
 end
 
 
- # user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :city)
- # @user = User.new(user_params)
-
-
- # @article = current_user.articles.create(article_params)
-
-
 
 

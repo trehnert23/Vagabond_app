@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem 'friendly_id', '~> 5.1.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

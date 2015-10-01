@@ -14,7 +14,7 @@
 
 		Current Planet of Residence: <%= @user.city %><br>
 
-		Space Tourist Since: <%= @user.created_at %><br>
+		Space Tourist Since: <%= @user.created_at.strftime("%d %b. %Y") %><br>
 	</div>
 
 	<% if current_user %>
@@ -29,13 +29,13 @@
 		<% end %>
 	<% end %>
 
-	<% @user.articles.each do |article| %>
+	<% @user.articles.reverse_each do |article| %>
 		<div class="articles">
 		<u><%= link_to article.title.capitalize, article, {:class=>"article_title_link" } %></u>
 		<br>
 		<br>    
 		
-	    <li><u>Location:</u> <%= link_to City.find(article.city).name, city_path(City.find(article.city).id), {:class=>"article_location_link"} %></li>
+	    <li><u>Location:</u> <%= link_to City.find(article.city).name.titleize, city_path(City.find(article.city).id), {:class=>"article_location_link"} %></li>
 
 	    <li><u>Review:</u> <%= h truncate(article.content, :length => 1000) %>....<%= link_to "(Read More)", article_path(article.id), {:class=>"read_more_link"} %></li>
 	    <hr>

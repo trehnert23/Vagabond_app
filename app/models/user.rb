@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
+	extend FriendlyId
+  	friendly_id :full_name, use: :slugged
 
 	has_secure_password
 	validates :email, :password_digest, presence: true
 	validates :email, uniqueness: true 
 	has_many :articles
+
 
 
 
@@ -13,3 +16,6 @@ class User < ActiveRecord::Base
 	end
 
 end
+
+
+

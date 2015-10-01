@@ -6,7 +6,7 @@
 	<%= link_to "Write a new article about #{@cities.name}", new_article_path, { :class=>"article_update_link" }  %>
 </div>
 
-<% @cities.articles.each do |article| %>
+<% @cities.articles.reverse_each do |article| %>
 	<div class="articles">
 	    <u><%= link_to article.title.capitalize, article, {:class=>"article_title_link" } %></u>
 	    <br>
