@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :city)
+    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :city, :avatar)
     @user = User.new(user_params)
     @user.full_name = @user.first_name + ' ' + @user.last_name
     if @user.save
@@ -52,6 +52,7 @@ class UsersController < ApplicationController
   
     render :show
   end
+
 
 
 end

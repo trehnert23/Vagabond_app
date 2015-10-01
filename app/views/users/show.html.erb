@@ -4,8 +4,8 @@
 		<%= @user.first_name.capitalize %>'s Profile
 	</div>
 	<hr>
-	
-	<img class="random_picture" src="https://img.washingtonpost.com/wp-apps/imrs.php?src=https://img.washingtonpost.com/news/the-intersect/wp-content/uploads/sites/32/2015/01/facebook-person.jpg&w=1484">  <!-- css for image is in the user.scss -->
+	<!-- css for image is in the user.scss -->
+	<%= image_tag @user.avatar.url, { :class=>"random_picture" } %>
 
 	<div class="hello_there">
 
