@@ -1,3 +1,7 @@
+.love {
+	color: #ff69b4;
+}
+
 
 /*MOON IMAGES*/
 
@@ -8,9 +12,10 @@
 	position: absolute;
 }
 
-.moon_link:hover + div.moon_tag {
+.moon_link:hover + .moon_tag {
 	display: block;
 }
+
 
 .moon_tag {
 	width: 100%;
