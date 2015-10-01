@@ -2,16 +2,16 @@
 	Login Page
 </div>
 
-<a href="https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code"><img class = "instagram" src = "http://socialfulcrum.com/wp-content/uploads/2015/08/instagram-logo.png"></a>
+<a href="https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code"><img class="insta_tag" src="http://orig09.deviantart.net/bef7/f/2015/017/a/c/instagram_logo__transparent_background__by_instahack-d8e94oc.png"></a>
 
-<div class="articles3">
+<div class="login_box">
 	<%= form_for @user, url: "/sessions", method: "post" do |f| %>
 
 	  <div>
-	    <%= f.text_field :email, placeholder: "Email" %>
+	    <%= f.text_field :email, placeholder: "Email", class: "title_input_field2" %>
 	  </div>
 	  <div>
-	    <%= f.password_field :password, placeholder: "Password"%>
+	    <%= f.password_field :password, placeholder: "Password", class: "title_input_field2"%>
 	  </div>
 	  <%= f.submit "Sign In", {:class => "login_button_2"} %>
 
