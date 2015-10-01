@@ -40,6 +40,7 @@
 
 	    <li><u>Review:</u> <%= h truncate(article.content, :length => 1000) %>....<%= link_to "(Read More)", article_path(article.id), {:class=>"read_more_link"} %></li>
 	    <hr>
+	    Comments: <%= article.comments.length %><br>
 		    <% if current_user.id == article.user_id %>
 			    <%= link_to " Edit this Article", edit_article_path(article.id), { :class=>"glyphicon glyphicon-pencil article_edit_button" } %><br>
 			    

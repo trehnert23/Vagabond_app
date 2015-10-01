@@ -26,8 +26,8 @@ Creaters Name: <%= @author %><br>
             </div>
 
         <% end %><br>
-
- 		<% @comments.each do |comment| %>
+        Comments: <%= @comments.length %>
+ 		<% @comments.reverse_each do |comment| %>
           <p>
             <%= comment.content %> - <%= time_ago_in_words comment.created_at %> ago by <strong><%= User.find(comment.user_id).email %></strong>
           </p>
