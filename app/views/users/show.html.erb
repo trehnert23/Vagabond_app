@@ -1,16 +1,21 @@
+
 <div class="container">
-	<h1 class="user_header"> <%= @user.first_name.capitalize %> Profile</h1>
+	<div class="user_header">
+		<%= @user.first_name.capitalize %>'s Profile
+	</div>
+	<hr>
 	
 	<img class="random_picture" src="https://img.washingtonpost.com/wp-apps/imrs.php?src=https://img.washingtonpost.com/news/the-intersect/wp-content/uploads/sites/32/2015/01/facebook-person.jpg&w=1484">  <!-- css for image is in the user.scss -->
 
 	<div class="hello_there">
-		Why hello there, <%= @user.first_name %>!<br>
+
+		Why Hello there, <%= @user.first_name.capitalize %>!<br>
+
 
 		Current Planet of Residence: <%= @user.city %><br>
 
 		Space Tourist Since: <%= @user.created_at %><br>
 	</div>
-
 
 	<% if current_user %>
 	 	<% if current_user.id == @user.id %>
@@ -26,13 +31,20 @@
 
 	<% @user.articles.each do |article| %>
 		<div class="articles">
-		<%= link_to article.title, article %>	    
-	    <li><%= link_to City.find(article.city).name, city_path(City.find(article.city).id) %></li>
-	    <li><%= h truncate(article.content, :length => 1000) %>....<%= link_to "Read More", article_path(article.id) %></li>
+		<u><%= link_to article.title.capitalize, article, {:class=>"article_title_link" } %></u>
+		<br>
+		<br>    
+		
+	    <li><u>Location:</u> <%= link_to City.find(article.city).name, city_path(City.find(article.city).id), {:class=>"article_location_link"} %></li>
+
+	    <li><u>Review:</u> <%= h truncate(article.content, :length => 1000) %>....<%= link_to "(Read More)", article_path(article.id), {:class=>"read_more_link"} %></li>
+	    <hr>
 		    <% if current_user.id == article.user_id %>
-			    <%= link_to "Edit this Article", edit_article_path(article.id), { :class=>"glyphicon glyphicon-pencil" } %><br>
+			    <%= link_to " Edit this Article", edit_article_path(article.id), { :class=>"glyphicon glyphicon-pencil article_edit_button" } %><br>
 			    
-				<%= link_to "Delete this Article", delete_article_path(article.id), class: "glyphicon glyphicon-trash", method: :delete, :data => {:confirm => "Are you sure you want to keep this cool interstellar destination a secret?"} %><br>
+
+				<%= link_to "Delete this Article", delete_article_path(article.id), class: "glyphicon glyphicon-trash article_edit_button", method: :delete, :data => {:confirm => "Are you sure you want to delete this date?"} %>
+
 		    <% end %>
 	    </div>
 	<% end %>
