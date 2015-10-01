@@ -1,27 +1,28 @@
-<h1> New User Signup Page </h1>
+<div class="user_header2">
+	New User Signup Page
+</div>
+
+<a href="https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code"><img class="insta_tag2" src="http://orig09.deviantart.net/bef7/f/2015/017/a/c/instagram_logo__transparent_background__by_instahack-d8e94oc.png"></a>
 
 
-<a href="https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code"><img class = "instagram" src = "http://socialfulcrum.com/wp-content/uploads/2015/08/instagram-logo.png"></a>
+<div class="login_box">
+	<%= form_for @user do |form| %>
+	  
+	 	<%= form.text_field :first_name, placeholder: "First Name", class: "form-control title_input_field2" %>
 
-<%= form_for @user do |form| %>
-  
- 	<%= form.text_field :first_name, placeholder: "First Name", class: "form-control" %><br>
+	    <%= form.text_field :last_name, placeholder: "Last Name", class: "form-control title_input_field2" %> 
 
-    <%= form.text_field :last_name, placeholder: "Last Name" %> <br>
+	    <%= form.text_field :city, placeholder: "Planet of Residence", class: "form-control title_input_field2" %> 
+	  
+	    <%= form.email_field :email, placeholder: "Email Address", class: "form-control title_input_field2" %> 
+	  
+	    <%= form.password_field :password, placeholder: "Password", class: "form-control title_input_field2" %> 
 
-    <%= form.text_field :city, placeholder: "Planet of Residence" %> <br>
-  
-    <%= form.email_field :email, placeholder: "Email Address" %> <br>
-  
-    <%= form.password_field :password, placeholder: "Password" %> <br>
+	    <%= form.file_field :avatar, class: "form-control title_input_field2" %>
 
-    <%= form.file_field :avatar, class: "form-control" %>
+	  <%= form.submit "Sign Up!", {:class => "signup_button"} %>
+	<% end %>
 
-
-
-  <%= form.submit "Sign Up!" %>
-<% end %>
-
-<p>If you already have an account please <%= link_to "Login", login_path %></p>
-
+	<p class="signup_text2">If you already have an account please <%= link_to "Login", login_path %></p>
+</div>
 
