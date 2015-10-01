@@ -4,11 +4,11 @@
 	<img class="random_picture" src="https://img.washingtonpost.com/wp-apps/imrs.php?src=https://img.washingtonpost.com/news/the-intersect/wp-content/uploads/sites/32/2015/01/facebook-person.jpg&w=1484">  <!-- css for image is in the user.scss -->
 
 	<div class="hello_there">
-		Why Hello there, <%= @user.first_name %>!<br>
+		Why hello there, <%= @user.first_name %>!<br>
 
-		You are from: <%= @user.city %><br>
+		Current Planet of Residence: <%= @user.city %><br>
 
-		Member since: <%= @user.created_at %><br>
+		Space Tourist Since: <%= @user.created_at %><br>
 	</div>
 
 
@@ -19,7 +19,7 @@
 			</div>
 			<h1 class="articles_header">Articles</h1>
 			<div class="article_create_button">
-				<%= link_to "Create New Article", new_article_path, { :class=>"article_update_link" }  %>
+				<%= link_to "Create A New Article", new_article_path, { :class=>"article_update_link" }  %>
 			</div>
 		<% end %>
 	<% end %>
@@ -32,7 +32,7 @@
 		    <% if current_user.id == article.user_id %>
 			    <%= link_to "Edit this Article", edit_article_path(article.id), { :class=>"glyphicon glyphicon-pencil" } %><br>
 			    
-				<%= link_to "Delete this Article", delete_article_path(article.id), class: "glyphicon glyphicon-trash", method: :delete, :data => {:confirm => "Are you sure you want to delete this date?"} %><br>
+				<%= link_to "Delete this Article", delete_article_path(article.id), class: "glyphicon glyphicon-trash", method: :delete, :data => {:confirm => "Are you sure you want to keep this cool interstellar destination a secret?"} %><br>
 		    <% end %>
 	    </div>
 	<% end %>

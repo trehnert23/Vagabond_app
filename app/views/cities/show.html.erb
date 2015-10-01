@@ -9,7 +9,7 @@
     <% if current_user %>
 	    <% if current_user.id == article.user_id %>
 		    <%= link_to "Edit this Article", edit_article_path(article) %><br>
-			<%= link_to "Delete this Article", delete_article_path(article), method: :delete, :data => {:confirm => "Are you sure you want to delete this date?"} %>
+			<%= link_to "Delete this Article", delete_article_path(article), method: :delete, :data => {:confirm => "Are you sure you want to keep this cool interstellar destination a secret?"} %>
 		<% end %>
 	<% end %>
 <% end %>

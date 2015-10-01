@@ -1,0 +1,10 @@
+<h1> New Comment page </h1>
+
+
+<%= form_for @comment do |form| %>
+  	
+  <%= form.text_area :content, :required => true, placeholder: "What do you wanna say?", size: "150x10" %> <br>
+
+  <%= form.submit "Create!" %>
+
+<% end %>

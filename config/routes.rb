@@ -19,6 +19,18 @@ root to: "users#index"
     delete "/articles/:id", to: "articles#destroy", as: "delete_article"
 
 
+  ### COMMENTS ###
+
+    post '/articles/:article_id/comments', to: 'comments#create_comment', as: 'article_comments'
+    # get "/articles/:id/comments/new", to: "comments#new", as: "comments"
+
+    # post "/articles/:id/comments/create", to: "comments#create"
+
+
+    # get "/users/:user_id/libraries", to: "library_users#index", as: "user_libraries"
+
+    # post "/libraries/:library_id/users", to: "library_users#create", as: "library_users"
+
   ### USERS ###
 
     get "/users", to: "users#index", as: "users"
@@ -40,8 +52,13 @@ root to: "users#index"
     delete '/sessions', to: 'sessions#destroy'
 
 
-    #cities
+    ### CITIES
 
     get "/cities/:id", to: "cities#show", as: "city"
+
+
+
+
+    
 
 end

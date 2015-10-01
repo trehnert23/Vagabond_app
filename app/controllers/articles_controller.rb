@@ -18,13 +18,14 @@ class ArticlesController < ApplicationController
   def create
     article_params = params.require(:article).permit(:title, :content, :city_id, :street, :state, :country)
     @article = current_user.articles.create(article_params)
-    redirect_to "/articles/#{@article.id}", flash: { success: "Boom! New date added!" }
+    redirect_to "/articles/#{@article.id}", flash: { success: "Thanks for the new destination tip!" }
   end
 
   def show
     @article = Article.find_by({id: params[:id]})
     @author = User.find(@article.user_id).first_name
     @city = City.find(@article.city_id).name
+    @comments = @article.comments
     render :show
   end
 
@@ -49,7 +50,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     Article.delete(params[:id])
-    redirect_to user_path(current_user), flash: { success: "Date has been deleted!" }
+    redirect_to user_path(current_user), flash: { success: "Are you sure you want to keep this cool interstellar destination a secret?" }
   end
 
 
