@@ -1,0 +1,33 @@
+.article_create_header {
+	font-family: Lobster;
+	font-size: 50px;
+	text-align: center;
+	color: white;
+	padding-bottom: 2%;
+}
+
+.article_input_form {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.title_input_field {
+	border-radius: 10px;
+	width: 40%;
+	margin: 0 auto;
+}
+
+.input_field {
+	border-radius: 10px;
+}
+
+.dropdown_menu {
+	margin: 0 auto;
+}
+
+.submit_button {
+	font-size: 30px;
+	font-family: Lobster;
+	margin-left: 43%;
+	border-radius: 10px;
+}
