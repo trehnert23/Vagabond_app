@@ -1,17 +1,21 @@
-<h1> Login Page Here </h1>
+<div class="user_header2">
+	Login Page
+</div>
 
 
-<%= form_for @user, url: "/sessions", method: "post" do |f| %>
+<div class="articles3">
+	<%= form_for @user, url: "/sessions", method: "post" do |f| %>
 
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <%= f.submit "Sign In" %>
+	  <div>
+	    <%= f.text_field :email, placeholder: "Email" %>
+	  </div>
+	  <div>
+	    <%= f.password_field :password, placeholder: "Password"%>
+	  </div>
+	  <%= f.submit "Sign In", {:class => "login_button_2"} %>
 
-<% end %> 
+	<% end %> 
 
 
-<p>If your new please <%= link_to "Signup", new_user_path %></p>
+	<p class="login_text">If your new please <%= link_to "Signup", new_user_path %></p>
+</div>

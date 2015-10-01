@@ -11,6 +11,14 @@
 	margin: 0 auto;
 }
 
+.article_input_form2 {
+	width: 55%;
+	margin: 0 auto;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.4);
+	padding: 1%;
+}
+
 .title_input_field {
 	border-radius: 10px;
 	width: 40%;
@@ -21,8 +29,15 @@
 	border-radius: 10px;
 }
 
+.input_field2 {
+	border-radius: 10px;
+	margin-left: 2%;
+}
+
 .dropdown_menu {
-	margin: 0 auto;
+	margin-left: 37%;
+	margin-bottom: 1%;
+	font-size: 20px;
 }
 
 .submit_button {
