@@ -18,7 +18,9 @@ class ArticlesController < ApplicationController
   def create
     article_params = params.require(:article).permit(:title, :content, :city_id, :street, :state, :country)
     @article = current_user.articles.create(article_params)
-    redirect_to "/articles/#{@article.id}", flash: { success: "Thanks for the new destination tip!" }
+    @user = current_user
+    # redirect_to "/articles/#{@article.id}", flash: { success: "Thanks for the new destination tip!" }
+    redirect_to user_path(current_user)
   end
 
   def show

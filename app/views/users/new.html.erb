@@ -1,5 +1,8 @@
 <h1> New User Signup Page </h1>
 
+
+<a href="https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code"><img class = "instagram" src = "http://socialfulcrum.com/wp-content/uploads/2015/08/instagram-logo.png"></a>
+
 <%= form_for @user do |form| %>
   
  	<%= form.text_field :first_name, placeholder: "First Name", class: "form-control" %><br>
@@ -11,6 +14,10 @@
     <%= form.email_field :email, placeholder: "Email Address" %> <br>
   
     <%= form.password_field :password, placeholder: "Password" %> <br>
+
+    <%= form.file_field :avatar, class: "form-control" %>
+
+
 
   <%= form.submit "Sign Up!" %>
 <% end %>

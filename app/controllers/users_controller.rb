@@ -12,8 +12,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :city)
+    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :city, :avatar)
     @user = User.new(user_params)
+    @user.full_name = @user.first_name + ' ' + @user.last_name
     if @user.save
       #login user
       session[:user_id] = @user.id
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     if @user.id == current_user.id
         render :edit
     else
@@ -36,7 +37,9 @@ class UsersController < ApplicationController
 
   def update
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :city)
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
+    a = params[:user]
+    a[:full_name] = a[:first_name] + " " + a[:last_name]
       if @user.update(user_params)
          redirect_to user_path(@user)
       else
@@ -45,10 +48,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by({id: params[:id]})
+    @user = User.friendly.find(params[:id])
   
     render :show
   end
+
 
 
 end

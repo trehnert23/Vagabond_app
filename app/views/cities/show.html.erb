@@ -6,10 +6,12 @@
 	<%= link_to "Write a new article about #{@cities.name}", new_article_path, { :class=>"article_update_link" }  %>
 </div>
 
-<% @cities.articles.each do |article| %>
+<% @cities.articles.first(10).reverse_each do |article| %>
 	<div class="articles">
 	    <u><%= link_to article.title.capitalize, article, {:class=>"article_title_link" } %></u>
 	    <br>
+	    <u>Created: <%= time_ago_in_words article.created_at %> ago</u>
+
 	    <li><u>Review:</u> <%= h truncate(article.content, :length => 1000) %>....<%= link_to "(Read More)", article_path(article.id), {:class=>"read_more_link"} %></li>
 	    <% if current_user %>
 		    <% if current_user.id == article.user_id %>

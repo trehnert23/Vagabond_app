@@ -4,8 +4,8 @@
 		<%= @user.first_name.capitalize %>'s Profile
 	</div>
 	<hr>
-	
-	<img class="random_picture" src="https://img.washingtonpost.com/wp-apps/imrs.php?src=https://img.washingtonpost.com/news/the-intersect/wp-content/uploads/sites/32/2015/01/facebook-person.jpg&w=1484">  <!-- css for image is in the user.scss -->
+	<!-- css for image is in the user.scss -->
+	<%= image_tag @user.avatar.url, { :class=>"random_picture" } %>
 
 	<div class="hello_there">
 
@@ -13,8 +13,9 @@
 
 
 		Current Planet of Residence: <%= @user.city %><br>
+		
 
-		Space Tourist Since: <%= @user.created_at %><br>
+		Space Tourist Since: <%= @user.created_at.strftime("%d %b. %Y") %><br>
 	</div>
 
 	<% if current_user %>
@@ -29,16 +30,17 @@
 		<% end %>
 	<% end %>
 
-	<% @user.articles.each do |article| %>
+	<% @user.articles.reverse_each do |article| %>
 		<div class="articles">
 		<u><%= link_to article.title.capitalize, article, {:class=>"article_title_link" } %></u>
 		<br>
 		<br>    
 		
-	    <li><u>Location:</u> <%= link_to City.find(article.city).name, city_path(City.find(article.city).id), {:class=>"article_location_link"} %></li>
+	    <li><u>Location:</u> <%= link_to City.find(article.city).name.titleize, city_path(City.find(article.city).id), {:class=>"article_location_link"} %></li>
 
 	    <li><u>Review:</u> <%= h truncate(article.content, :length => 1000) %>....<%= link_to "(Read More)", article_path(article.id), {:class=>"read_more_link"} %></li>
 	    <hr>
+	    Comments: <%= article.comments.length %><br>
 		    <% if current_user.id == article.user_id %>
 			    <%= link_to " Edit this Article", edit_article_path(article.id), { :class=>"glyphicon glyphicon-pencil article_edit_button" } %><br>
 			    

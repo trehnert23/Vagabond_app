@@ -15,7 +15,8 @@ class CitiesController < ApplicationController
   	end
 
 	def show
-	  @cities = City.find_by({id: params[:id]})
+	  @cities = City.friendly.find(params[:id])
+	  @articles = Article.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
 	  # @author = User.find(@cities.user_id).first_name
 	  render :show
 	end
