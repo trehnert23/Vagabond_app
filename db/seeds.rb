@@ -1,12 +1,12 @@
 
-# City.create(name: "The Moon")
-# City.create(name: "Mars")
-# City.create(name: "Bradley's Sweet Space Palace of Love")
+City.create(name: "The Moon")
+City.create(name: "Mars")
+City.create(name: "Bradley's Sweet Space Palace of Love")
 
 
-User.create(first_name: "steve", last_name: "farquhar", email: "farquhar@gml.com", city: "The Moon", password: "123")
-User.create(first_name: "brad", last_name: "flynn", email: "farquhar@hotmal.com", city: "The Moon", password: "123")
-User.create(first_name: "jon", last_name: "tommy", email: "faar@gmail.com", city: "The Moon", password: "123")
+# User.create(first_name: "steve", last_name: "farquhar", email: "farquhar@gml.com", city: "The Moon", password: "123")
+# User.create(first_name: "brad", last_name: "flynn", email: "farquhar@hotmal.com", city: "The Moon", password: "123")
+# User.create(first_name: "jon", last_name: "tommy", email: "faar@gmail.com", city: "The Moon", password: "123")
 
 
 
