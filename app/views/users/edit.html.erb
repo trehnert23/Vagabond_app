@@ -1,18 +1,23 @@
-<h1> User Update Page </h1>
+<div class="article_create_header">
+	User Update
+</div>
 
-<%= form_for @user do |form| %>
-  
- 	<%= form.text_field :first_name, placeholder: "First Name", class: "form-control" %><br>
 
-    <%= form.text_field :last_name, placeholder: "Last Name" %> <br>
+<div class="articles4">
+	<%= form_for @user do |form| %>
+	  
+	 	<%= form.text_field :first_name, placeholder: "First Name", class: "form-control title_input_field2" %>
 
-    <%= form.text_field :city, placeholder: "Planet of Residence" %> <br>
-  
-    <%= form.email_field :email, placeholder: "Email Address" %> <br>
-  
-    <%= form.password_field :password, placeholder: "Password" %> <br>
-    
-    <%= form.file_field :avatar, class: "form-control" %>
+	    <%= form.text_field :last_name, placeholder: "Last Name", class: "form-control title_input_field2" %> 
 
-  <%= form.submit "Save changes" %>
-<% end %>
+	    <%= form.text_field :city, placeholder: "Planet of Residence", class: "form-control title_input_field2" %>
+	  
+	    <%= form.email_field :email, placeholder: "Email Address", class: "form-control title_input_field2" %>
+	  
+	    <%= form.password_field :password, placeholder: "Password", class: "form-control title_input_field2" %>
+
+   		<%= form.file_field :avatar, class: "form-control" %>
+
+	  <%= form.submit "Save changes", :class => 'submit_button2' %>
+	<% end %>
+</div>
