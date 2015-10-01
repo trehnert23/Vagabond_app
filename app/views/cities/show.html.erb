@@ -1,18 +1,24 @@
-<h1><%= @cities.name %></h1>
+<div class="cities_header">
+	<%= @cities.name %>
+</div>
 
-<%= link_to "Write a new article about #{@cities.name}", new_article_path, { :class=>"article_update_link" }  %>
+<div class="article_create_button">
+	<%= link_to "Write a new article about #{@cities.name}", new_article_path, { :class=>"article_update_link" }  %>
+</div>
 
 <% @cities.articles.each do |article| %>
 	<div class="articles">
-    <li><%= link_to article.title, article %></li>
-    <li><%= h truncate(article.content, :length => 1000) %>....<%= link_to "Read More", article_path(article.id) %></li>
-    <% if current_user %>
-	    <% if current_user.id == article.user_id %>
-		    <%= link_to "Edit this Article", edit_article_path(article) %><br>
-			<%= link_to "Delete this Article", delete_article_path(article), method: :delete, :data => {:confirm => "Are you sure you want to delete this date?"} %>
+	    <u><%= link_to article.title.capitalize, article, {:class=>"article_title_link" } %></u>
+	    <br>
+	    <li><u>Review:</u> <%= h truncate(article.content, :length => 1000) %>....<%= link_to "(Read More)", article_path(article.id), {:class=>"read_more_link"} %></li>
+	    <% if current_user %>
+		    <% if current_user.id == article.user_id %>
+			    <%= link_to " Edit this Article", edit_article_path(article.id), { :class=>"glyphicon glyphicon-pencil article_edit_button" } %><br>
+				<%= link_to "Delete this Article", delete_article_path(article.id), class: "glyphicon glyphicon-trash article_edit_button", method: :delete, :data => {:confirm => "Are you sure you want to delete this date?"} %>
+			<% end %>
 		<% end %>
-	<% end %>
+	</div>
 <% end %>
 
 
- 
+

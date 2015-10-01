@@ -1,14 +1,18 @@
-<h1> New Article page </h1>
 
+<div class="article_create_header">
+	Write A New Article
+</div>
 
+<div class="article_input_form">
+	<%= form_for @article do |form| %>
+	  
+	 	<%= form.text_field :title, :required => true, placeholder: "Title", :maxlength => 200, class: "form-control title_input_field" %><br>
 
-<%= form_for @article do |form| %>
-  
- 	<%= form.text_field :title, :required => true, placeholder: "Title", :maxlength => 200, class: "form-control" %><br>
+		<%= select(:article, :city_id, [['Moon', 1], ['Mars', 2], ["Brad's Space Hotel of Love", 3]]) %><br>
 
-	<%= select(:article, :city_id, [['Moon', 1], ['Mars', 2], ["Brad's Space Hotel of Love", 3]]) %><br>
+	    <%= form.text_area :content, :required => true, placeholder: "Any cool destinations on this planet?", size: "100x10", class: "input_field" %> <br>
+	    <br>
+  		<%= form.submit "Create!", :class => 'submit_button' %>
 
-    <%= form.text_area :content, :required => true, placeholder: "Any cool destinations on this planet?", size: "150x10" %> <br>
-
-  <%= form.submit "Create!" %>
-<% end %> 
+	<% end %> 
+</div>
